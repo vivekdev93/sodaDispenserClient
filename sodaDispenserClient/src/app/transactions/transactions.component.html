@@ -1,0 +1,22 @@
+<label for="inventory"></label>
+<table id="inventory" class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">Date</th>
+    <th scope="col">Soda Type</th>
+    <th scope="col">Price Paid for transaction(in cents)</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let item of transactions">
+    <td>{{item.id}}</td>
+    <td>{{item.dateOfTransaction}}</td>
+    <td>{{item.type}}</td>
+    <td>{{item.pricePaid}}</td>
+  </tr>
+
+
+</table>
+
+
+

@@ -1,0 +1,29 @@
+<form (ngSubmit)="dispenseSoda(form.value)" [formGroup]="form">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-12">
+        <label for="selectSoda" class="col-form-label">Select Soda</label>
+        <select id="selectSoda" class="form-control" formControlName="sodaType">
+          <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="amount" class="col-form-label">Quantity(in multiples of 25)</label>
+        <input type="number" id="amount" min="25" step="25" formControlName="numberOfQuarters" class="form-control"/>
+      </div>
+      <div class="col-12" style="padding: 10px">
+        <p class="alert alert-info"><i class="fa fa-info-circle"></i><b> Each type of soda costs a quarter(25 cents)</b></p>
+      </div>
+      <div class="col-12 float-right" style="padding: 10px">
+        <button type="submit" class="btn btn-primary float-right">Dispense Soda</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div *ngIf="response"><p class="alert alert-success"><i class="fa fa-check-circle"></i><b>{{response.message}}</b>&nbsp;
+</p></div>
+<div *ngIf="error"><p class="alert alert-danger"><i class='fas fa-exclamation-triangle'></i><b>{{error.message}}</b>
+  &nbsp; </p></div>
+
+
+
